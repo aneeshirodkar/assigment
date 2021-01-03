@@ -115,7 +115,7 @@ onDragEnd =(results) =>{
     return (
 <DragDropContext onDragEnd={this.onDragEnd}>
    <div>
-     <div style={style.header}><h2 style={style.h}>Task Management</h2>
+     <div style={style.header}><h2 style={style.h}>Tasks Management</h2>
      <div>
       <select 
         value={this.state.selectValue}
