@@ -1,0 +1,25 @@
+.container{
+    
+    border-radius: 5;
+    width: 200px;
+    padding: 8px;
+    height: 426px;
+    margin-right: 10px;
+    margin-top: 8px;
+}
+
+
+/* .list-container {
+    display: grid;
+    grid-template-rows: auto 80px auto auto ;
+    grid-gap: 10px;
+    background-color:#dfe3e6;
+    // padding: 10px;
+}
+
+.list-container> div{className="container"
+    background-color:rgb(233, 209, 177);
+    // border:1px solid black;
+    text-align:left;
+    font-size: 15px;
+} */
