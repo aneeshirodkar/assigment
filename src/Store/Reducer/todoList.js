@@ -136,7 +136,7 @@ const reducer = (state=initialState,action) =>{
                    
 
         case actionTypes.EDIT_LIST_TITLE:
-            
+            if(state.dataList.filter(a => a.title === action.title).length ===0) {
                         const changeddataList=state.dataList.map(list =>{
                             if(list.id === action.listID){
                                 return{
@@ -151,6 +151,13 @@ const reducer = (state=initialState,action) =>{
                             ...state,
                         dataList :changeddataList
                         }
+                    }
+                    else{
+                        return {
+                            ...state,
+                        error :1
+                        }
+                    }
 
         case actionTypes.DELETE_LIST:
                             let modifiedDataList = [...state.dataList]
@@ -163,6 +170,11 @@ const reducer = (state=initialState,action) =>{
                             }
 
         case actionTypes.EDIT_ITEM_TEXT:
+            const listss =[...state.dataList]
+        let q =[]
+        listss.forEach(i=>{i.todoitem.forEach(j=>{q.push(j)})}) 
+    
+        if(q.filter(a => a.text ===action.text).length === 0){
             let editDataList = [...state.dataList]
                let neweditdataList=   editDataList.map(list =>{
                                     if(list.id === action.listID){
@@ -178,7 +190,14 @@ const reducer = (state=initialState,action) =>{
                                 ...state,
                                 dataList:neweditdataList
                             }
-                           //return state
+                        }
+                        else{
+                            return{
+                                ...state,
+                                error:2
+                            }
+                        }
+                         //return state
         case actionTypes.DELETE_ITEM:
             let deletedItemList = [...state.dataList]
             let newdeletedItemList=deletedItemList.map(list =>{

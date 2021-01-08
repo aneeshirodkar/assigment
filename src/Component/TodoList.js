@@ -43,7 +43,7 @@ const TodoList =(props)=>{
     const deleteHandler = () =>{
         confirmAlert({
             title:'Confirm delete',
-            message: 'Are you want to delete this List',
+            message: ' you want to delete this List',
             buttons:[
                 {label: 'Yes',
                  onClick:() =>props.onDeleteList(props.listID)  },

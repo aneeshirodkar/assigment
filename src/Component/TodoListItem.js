@@ -33,7 +33,7 @@ import { connect } from 'react-redux';
     const deleteHandler = () =>{
         confirmAlert({
             title:'Confirm delete',
-            message: 'Are you want to delete this Item',
+            message: 'You want to delete this Item',
             buttons:[
                 {label: 'Yes',
                  onClick:() =>props.onDeleteItem(props.listID,props.itemID)  },

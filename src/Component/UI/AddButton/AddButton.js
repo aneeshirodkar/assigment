@@ -89,8 +89,8 @@ class AddButton extends Component{
          }
          if(this.props.list) textareastyle ={...textareastyle, backgroundColor:this.props.color}
     return(
-        this.state.isAddClick ?
-            <div>
+      this.state.isAddClick ?
+            <div data-test="appComponent">
                 <input placeholder={placeholder}
                         autoFocus= {true} 
                         onBlur ={this.closeClickHandler}
@@ -101,7 +101,7 @@ class AddButton extends Component{
                     {this.state.enterTextError ? <label style={{fontSize:"small",color:"red"}}>Name is madatory.</label>: null}
                 
             </div>
-: <div style ={style} onClick = {this.addClickHandler}>
+: <div data-test="appComponent" style ={style} onClick = {this.addClickHandler}>
             <AddIcon/>
             {buttonText}
         </div>
