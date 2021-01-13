@@ -99,7 +99,7 @@ const reducer = (state=initialState,action) =>{
         if(k.filter(a => a.text ===action.text).length === 0)
         {
             let allTodoItem = lists.map(i=> i.todoitem)
-        console.log(allTodoItem)
+        
                         const newtodoItem ={
                             text:action.text,
                             id: Date.now()

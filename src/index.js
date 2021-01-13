@@ -3,15 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { combineReducers, createStore } from 'redux';
+import { combineReducers, createStore,applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import TodoListReducer from '../src/Store/Reducer/todoList'
+import thunk from 'redux-thunk'
 
 const reducer =combineReducers({
   lists:TodoListReducer
 })
 
-const store = createStore(reducer)
+const store = createStore(reducer,applyMiddleware(thunk))
 
 ReactDOM.render(
   <Provider store ={store}>

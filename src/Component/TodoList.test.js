@@ -85,6 +85,18 @@ describe('TodoList Component actions', () => {
       
     })
 
+    it('should handle EDIT_List_Title', () => {
+      expect(
+        reducer( initialState, {
+            type:actionTypes.EDIT_LIST_TITLE,
+            title:"Todo",
+            listID : 1
+        })
+      ).toEqual({"dataList": [{"id": 0, "title": "Todo", "todoitem": [{"id": 3, "text": "wash clothes"}, {"id": 4, "text": "pay bill"}]}, {"id": 1, "title": "Progress", "todoitem": [{"id": 5, "text": "bank"}, {"id": 6, "text": "book"}]}], "error": 1})
+  
+      
+    })
+
     it('should handle Delete_list', () => {
       expect(
         reducer( initialState, {

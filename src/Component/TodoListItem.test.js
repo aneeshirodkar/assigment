@@ -84,6 +84,18 @@ describe('TodoListItem Component actions', () => {
   
       
     })
+    it('should handle EDIT_Item_Text it should handle duplicate', () => {
+      expect(
+        reducer( initialState, {
+            type:actionTypes.EDIT_ITEM_TEXT,
+            text:"wash clothes",
+            listID :1,
+            itemID:5
+        })
+      ).toEqual({"dataList": [{"id": 0, "title": "Todo", "todoitem": [{"id": 3, "text": "wash clothes"}, {"id": 4, "text": "pay bill"}]}, {"id": 1, "title": "Progress", "todoitem": [{"id": 5, "text": "bank"}, {"id": 6, "text": "book"}]}], "error": 2})
+  
+      
+    })
 
     it('should handle Delete_Itemt', () => {
       expect(

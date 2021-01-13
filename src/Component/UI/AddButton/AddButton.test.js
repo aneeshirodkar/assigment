@@ -1,14 +1,23 @@
 import * as actions from '../../../Store/actions/index'
 import * as actionTypes from '../../../Store/actions/actionTypes'
 import { mount,configure,shallow } from 'enzyme'
+import AddButton from './AddButton'
 import React from 'react'
-
+import {testStore} from '../../../Util'
 
 import reducer from '../../../Store/Reducer/todoList'
-
+import { mapDispatchToProps } from './AddButton';
 import Adapter from 'enzyme-adapter-react-16';
+import AddIcon from '@material-ui/icons/Add';
+
+// Create the mock store
+import configureMockStore from 'redux-mock-store';
+import { Provider } from 'react-redux'
+
 
 configure({adapter : new Adapter ()}) 
+
+
 
   const initialState ={
     dataList :[{title:"Todo",
@@ -40,6 +49,9 @@ configure({adapter : new Adapter ()})
                 ],
 error:0
 }
+
+//const mockStore = configureMockStore(... initialState);
+
 describe('ADD Component actions', () => {
 
   
@@ -114,3 +126,25 @@ describe('ADD Component actions', () => {
   
 
 })
+
+
+// describe('ADD Component render', () => {
+//   let wrapper, store;
+//   beforeEach(() => {
+    
+//     const store = testStore(initialState)
+    
+//     wrapper = shallow(
+//       <Provider store={store}>
+//         <AddButton  list={1}/>
+//         </Provider>
+//     );
+// });
+//     it('should render <BuildControls/> when receiving ing ',()=>{
+//     //  const acr = store.getActions()
+//    console.log(wrapper.debug())
+//     //expect(wrapper.exists(<AddIcon/>)).toBe(true)
+//     })
+
+
+// })

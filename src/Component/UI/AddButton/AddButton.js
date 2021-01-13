@@ -90,7 +90,7 @@ class AddButton extends Component{
          if(this.props.list) textareastyle ={...textareastyle, backgroundColor:this.props.color}
     return(
       this.state.isAddClick ?
-            <div data-test="appComponent">
+            <div data-test="Addinputcomp">
                 <input placeholder={placeholder}
                         autoFocus= {true} 
                         onBlur ={this.closeClickHandler}
@@ -101,7 +101,7 @@ class AddButton extends Component{
                     {this.state.enterTextError ? <label style={{fontSize:"small",color:"red"}}>Name is madatory.</label>: null}
                 
             </div>
-: <div data-test="appComponent" style ={style} onClick = {this.addClickHandler}>
+: <div data-test="Addbtncomp" style ={style} onClick = {this.addClickHandler}>
             <AddIcon/>
             {buttonText}
         </div>
@@ -109,7 +109,7 @@ class AddButton extends Component{
 }
 }
 
-const mapDispatchToProps = dispatch =>{
+export const mapDispatchToProps = dispatch =>{
   return{
     onTodoListADD : (text) => dispatch(actions.addlist(text)),
     onTodoItemAdd : (text, listID) => dispatch (actions.addItem(text,listID))
